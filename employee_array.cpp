@@ -105,10 +105,10 @@ void displayMenu() {
     cout << "Enter command: ";
 }
 
-// ================== main ==================
+// main 
 int main() {
     Employee* employees[50];  // array of pointers to Employee
-    int count = 0;
+    int count = 0;             // keeps track of how many employees exist
     char command;
 
     do {
@@ -134,7 +134,7 @@ int main() {
                 lname = fullName.substr(0, commaPos);
                 fname = fullName.substr(commaPos + 1);
                 if (fname.size() && fname[0] == ' ')
-                    fname.erase(0, 1);
+                    fname.erase(0, 1); // remove leading space
             } else {
                 lname = fullName;
                 fname = "";
@@ -144,6 +144,7 @@ int main() {
             cout << "Hourly (h) or salaried (s): ";
             cin >> type;
 
+           // create the appropriate object and store it in array
             if (tolower(type) == 'h') {
                 double rate, hrs;
                 cout << "Enter hourly wage: ";
@@ -174,8 +175,9 @@ int main() {
             cout << "\nName\t\t\tNew Wages\n";
             cout << "------------------------------\n";
 
+            // loop through and apply raise based on type
             for (int i = 0; i < count; i++) {
-                SalariedEmployee* sEmp = dynamic_cast<SalariedEmployee*>(employees[i]);
+                SalariedEmployee* sEmp = dynamic_cast<SalariedEmployee*>(employees[i]);    // check if salaried employee using dynamic_cast
                 if (sEmp) {
                     sEmp->raiseWages(percent);
                     cout << sEmp->getFullName() << "\t"
@@ -203,7 +205,7 @@ int main() {
             cout << endl;
         }
 
-    } while (command != 'q');
+    } while (command != 'q');    // repeat until user quits
 
     // cleanup
     for (int i = 0; i < count; i++)
