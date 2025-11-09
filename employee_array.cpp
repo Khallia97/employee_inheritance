@@ -85,12 +85,13 @@ public:
         hrlyPay = annualSalary / 52.0 / 40.0;
     }
 
-    void listInfo() const override {
+   void listInfo() const override {
         cout << left << setw(20) << getFullName()
              << setw(15) << fixed << setprecision(2)
-             << hrlyPay << "/year"
-             << "$" << bonusAmt << endl;
-    }
+             << annualSalary << "/year"
+             << "   $" << fixed << setprecision(2)
+             << bonusAmt << endl;
+   }
 
     double getAnnualSalary() const { return annualSalary; }
 };
