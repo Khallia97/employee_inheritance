@@ -88,7 +88,7 @@ public:
     void listInfo() const override {
         cout << left << setw(20) << getFullName()
              << setw(15) << fixed << setprecision(2)
-             << hrlyPay << "/hour"
+             << hrlyPay << "/year"
              << "$" << bonusAmt << endl;
     }
 
