@@ -58,7 +58,7 @@ public:
         cout << left << setw(20) << getFullName()
              << setw(10) << fixed << setprecision(2)
              << hrlyPay << "/hour"
-             << "  " << "-" << endl;
+             << " " << "-" << endl;
     }
 };
 
