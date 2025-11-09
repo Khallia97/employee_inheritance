@@ -56,9 +56,9 @@ public:
 
     void listInfo() const override {
         cout << left << setw(20) << getFullName()
-             << setw(15) << fixed << setprecision(2)
+             << setw(10) << fixed << setprecision(2)
              << hrlyPay << "/hour"
-             << setw(10) << "-" << endl;
+             << "  " << "-" << endl;
     }
 };
 
@@ -87,7 +87,7 @@ public:
 
    void listInfo() const override {
         cout << left << setw(20) << getFullName()
-             << setw(15) << fixed << setprecision(2)
+             << setw(10) << fixed << setprecision(2)
              << annualSalary << "/year"
              << "   $" << fixed << setprecision(2)
              << bonusAmt << endl;
@@ -196,7 +196,7 @@ int main() {
 
         else if (command == 'l') {
             cout << left << setw(20) << "Name"
-                 << setw(15) << "Hourly Wages"
+                 << setw(15) << "Pay Rate"
                  << setw(10) << "Bonus" << endl;
             cout << "---------------------------------------------\n";
 
